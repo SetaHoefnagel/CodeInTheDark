@@ -13,24 +13,18 @@ import {
 
 import Editor from './Editor';
 import Home from './components/Home/index';
-import Navigation from './components/Navigation/index';
+import About from './components/About/index';
+import { Layout } from './components/Layout';
 
 export default class App extends Component {
     render() {
         return (
-            <div className="App">
-                <div className="container-fluid">
-                    <Navigation router={Router} />
-                </div>
-                    {/* A <Switch> looks through its children <Route>s and
-                    renders the first one that matches the current URL. */}
-                    <Switch>
-                        <Route path="/about" component={() => <Home title="About"/>}></Route>
-                        <Route path="/users" component={() => <Home title="Users"/>}></Route>
-                        <Route path="/codeinthedark" component={Editor}></Route>
-                        <Route exact={true} path="/" component={() => <Home title="Home"/>}></Route>
-                    </Switch>
-            </div>
+            <Layout>
+                <Route path="/about" component={() => <About />}></Route>
+                <Route path="/users" component={() => <Home title="Users"/>}></Route>
+                <Route path="/codeinthedark" component={Editor}></Route>
+                <Route exact={true} path="/" component={() => <Home title="Home"/>}></Route>
+            </Layout>
         );
     }
 }
