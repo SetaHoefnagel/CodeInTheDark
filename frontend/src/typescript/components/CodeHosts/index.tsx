@@ -1,15 +1,15 @@
 import React from 'react';
 import { Component } from 'react';
 
-export default class About extends Component<{}, {}>{
+export default class CodeHost extends Component<{}, {}>{
     constructor(props: any, context: any) {
         super(props, context);
-        document.title = 'About | Django Code In The Dark';
+        document.title = 'Host | Django Code In The Dark';
     }
     render() {
         return(
             <div>
-                <h2>About</h2>
+                <h2>Host</h2>
             </div>
     )}
 }

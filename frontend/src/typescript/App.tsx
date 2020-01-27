@@ -14,6 +14,9 @@ import {
 import Editor from './Editor';
 import Home from './components/Home/index';
 import About from './components/About/index';
+import CodeHost from './components/CodeHosts/index';
+import CodeInTheDark from './components/CodeInTheDark/index';
+import Users from './components/Users/index';
 import { Layout } from './components/Layout';
 
 export default class App extends Component {
@@ -21,8 +24,10 @@ export default class App extends Component {
         return (
             <Layout>
                 <Route path="/about" component={() => <About />}></Route>
-                <Route path="/users" component={() => <Home title="Users"/>}></Route>
-                <Route path="/codeinthedark" component={Editor}></Route>
+                <Route path="/codehost" component={() => <CodeHost />}></Route>
+                <Route path="/users" component={() => <Users />}></Route>
+                <Route path="/codeinthedark" component={() => <CodeInTheDark />}></Route>
+                {/* <Route path="/codeinthedark" component={Editor}></Route> */}
                 <Route exact={true} path="/" component={() => <Home title="Home"/>}></Route>
             </Layout>
         );

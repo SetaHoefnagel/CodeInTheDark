@@ -39,6 +39,9 @@ export default class Home extends Component< {}, {}>{
                                         <NavLink className="nav-link" to="/users">Users</NavLink>
                                     </li>
                                     <li className="nav-item">
+                                        <NavLink className="nav-link" to="/codehost">CodeHost</NavLink>
+                                    </li>
+                                    <li className="nav-item">
                                         <NavLink className="nav-link" to="/codeinthedark">Code in the dark</NavLink>
                                     </li>
                                 </ul>
