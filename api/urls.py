@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 
+from .views import (RegistrationAPI, LoginAPI, UserAPI)
+
 urlpatterns = [
     # url('test/', admin.site.urls),
+    # url(r'auth/', include('knox.urls')),
+    url("^auth/register/$", RegistrationAPI.as_view()),
+    url("^auth/login/$", LoginAPI.as_view()),
+    url("^auth/user/$", UserAPI.as_view()),
+
 ]
