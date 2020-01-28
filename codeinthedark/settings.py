@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'knox',
+
     'api',
     'frontend',
 ]
@@ -53,6 +56,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'codeinthedark.middleware.dev_cors_middleware',
 ]
+
+# Rest framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}
 
 ROOT_URLCONF = 'codeinthedark.urls'
 
@@ -73,7 +81,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'codeinthedark.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
