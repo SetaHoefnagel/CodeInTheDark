@@ -6,6 +6,7 @@ psycopg2==2.7.3.2
 
 # Django rest framework for the API
 djangorestframework
+django-rest-knox
 
 # Django Filer and dependencies.
 django-mptt==0.9.0
