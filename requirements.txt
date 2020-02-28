@@ -1,5 +1,5 @@
 django==2.1.5
-django-filer==1.3.0
+django-filer==1.6.0
 
 # Used to connect with our Postgres database.
 psycopg2==2.7.3.2
