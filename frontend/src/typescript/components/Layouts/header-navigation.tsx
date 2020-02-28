@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Navigation from './Navigation/index';
+import Navigation from '../Navigation/index';
 
 export interface LayoutProps {
     children?: React.ReactNode;
@@ -10,7 +10,7 @@ export class Layout extends React.Component<LayoutProps, { }> {
         return (
         <div className="App">
             <Navigation />
-            <div className='container-fluid'>
+            <div className='container mt-3'>
                 <div className="row">
                     <div className='col-sm-12'>
                         { this.props.children }

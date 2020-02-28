@@ -11,7 +11,7 @@ console.log(JSON.stringify((process.env.HOSTNAME !== undefined ? process.env.HOS
 module.exports = {
   entry: {
     main: ['./src/typescript/main.tsx', './src/sass/main.scss'],
-    serviceWorker: './src/typescript/serviceWorker.ts'
+    serviceWorker: './src/typescript/serviceWorker.tsx'
   },
    plugins: [
     new MiniCssExtractPlugin({

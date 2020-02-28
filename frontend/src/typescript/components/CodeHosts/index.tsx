@@ -38,7 +38,7 @@ export default class CodeHost extends Component<{}, CodeState>{
         this.setState({...this.state, [name]: value});
     }
 
-    login(event): Promise{
+    login(event) {
         event.preventDefault();
         fetch('/api/auth/login/', {
             method: 'POST',
@@ -50,6 +50,7 @@ export default class CodeHost extends Component<{}, CodeState>{
         .then(json => json.json())
         .then(json => {
             localStorage.setItem("token", json.token)
+            localStorage.setItem("token_refresh", json.refresh)
             this.setState({token: json.token });
         })
         .catch((error) => {
@@ -63,7 +64,6 @@ export default class CodeHost extends Component<{}, CodeState>{
     }
 
     isLoggedIn(){
-        console.log(localStorage.getItem("token"))
         return localStorage.getItem("token") ? true : false
     }
 

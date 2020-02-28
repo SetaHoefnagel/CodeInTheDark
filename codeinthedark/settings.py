@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,11 +27,6 @@ SECRET_KEY = '#n95=+4-$%3&)y@a5)d^ax#9bco==l+%m1^)c_^2p253hm0afn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,9 +38,21 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
 
+    'codeinthedark',
     'api',
     'frontend',
+
 ]
+ALLOWED_HOSTS = []
+
+
+# Application definition
+REST_KNOX = {
+  'TOKEN_TTL': timedelta(weeks=52),
+  'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+  'AUTO_REFRESH': True,
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Amsterdam'
 
 USE_I18N = True
 

@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 
-from .views import (RegistrationAPI, LoginAPI, UserAPI)
+from .views import (RegistrationAPI, LoginAPI, UserAPI, CreateRoomAPI, RoomListAPI)
+from codeinthedark.models import Room
+
 
 urlpatterns = [
     # url('test/', admin.site.urls),
@@ -25,4 +27,6 @@ urlpatterns = [
     url("^auth/login/$", LoginAPI.as_view()),
     url("^auth/user/$", UserAPI.as_view()),
 
+    url("^rooms/create", CreateRoomAPI.as_view()),
+    url("^rooms/list", RoomListAPI.as_view()),
 ]
