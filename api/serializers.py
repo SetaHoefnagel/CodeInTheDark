@@ -64,10 +64,14 @@ class ContestantSerializer(serializers.ModelSerializer):
 
 class RoomListSerializer(serializers.ModelSerializer):
     contestants = ContestantSerializer(many=True, read_only=True)
+    website_image = serializers.SerializerMethodField()
+
+    def get_website_image(self, obj):
+        return obj.website_image.url
 
     class Meta:
         model = Room
-        fields = ('id', 'contestants',  'max_contestants', 'time_limit', 'code', 'completed', 'start_time')
+        fields = ('id', 'contestants',  'max_contestants', 'time_limit', 'code', 'completed', 'start_time', 'website', 'website_image')
 
 
 
