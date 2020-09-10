@@ -2,7 +2,7 @@ django==2.2.10
 django-filer==1.6.0
 
 # Used to connect with our Postgres database.
-psycopg2==2.7.3.2
+#psycopg2==2.7.3.2
 
 # Django rest framework for the API
 djangorestframework
@@ -11,3 +11,6 @@ django-rest-knox
 # Django Filer and dependencies.
 django-mptt==0.9.0
 easy-thumbnails==2.5
+# Users have to download aditional files, check https://selenium-python.readthedocs.io/installation.html#drivers
+selenium==3.141.0
+Pillow
