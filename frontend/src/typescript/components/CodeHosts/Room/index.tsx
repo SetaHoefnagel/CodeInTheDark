@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import {Room, Contestant} from 'models';
+import { PopUpImage } from '../../Global/PopUpImage'
 
 type RoomList =  {
     rooms: "loading" | "error" | Room[]
@@ -115,6 +116,7 @@ export class RoomComponent extends Component<RoomProps, {time_left: number, tick
         return (
             <div className="row">
                 <div className="col-sm-12 text-left"><h3>Room {this.props.room.code}</h3></div>
+                <div className="col-sm-4"><PopUpImage className="image" src={this.props.room.website_image} /></div>
                 <div className="col-sm-2">Connected contestants: {this.props.room.contestants.length}/{this.props.room.max_contestants}
                     <ul>
                         {this.props.room.contestants.map(contestant => <li>{contestant.username}</li> )}
@@ -130,6 +132,7 @@ export class RoomComponent extends Component<RoomProps, {time_left: number, tick
                         {this.state.time_left} Seconds</div>
                     : ""}
                 <div className="col-sm-3"><button className="btn btn-danger">Delete</button></div>
+                <div className="col-sm-4 offset-sm-4"><p>Website: <a href={this.props.room.website} target="_blank">{this.props.room.website}</a></p></div>
             </div>
         )
     }

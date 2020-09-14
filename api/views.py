@@ -61,6 +61,7 @@ class CreateRoomAPI(generics.GenericAPIView):
         room = Room.objects.create(max_contestants=serializer.data.get('max_contestants'),
                                    time_limit=serializer.data.get('time_limit') * 60,
                                    owner=request.user,
+                                   website=serializer.data.get('website_url')
                                    )
 
         return Response({

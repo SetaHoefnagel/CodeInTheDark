@@ -54,6 +54,7 @@ class LoginUserSerializer(serializers.Serializer):
 class CreateRoomSerializer(serializers.Serializer):
     max_contestants = serializers.IntegerField()
     time_limit = serializers.IntegerField()
+    website_url = serializers.CharField()
 
 
 class ContestantSerializer(serializers.ModelSerializer):
