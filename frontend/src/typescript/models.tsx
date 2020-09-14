@@ -5,7 +5,9 @@ export type Room = {
     time_limit: number,
     code: string,
     completed: boolean,
-    start_time: Date | null
+    start_time: Date | null,
+    website: string | null,
+    website_image: string,
 }
 
 export type Contestant = {

@@ -3,7 +3,8 @@ import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import { Component } from 'react';
 
-import createReactClass from 'create-react-class';
+// import createReactClass from 'create-react-class';
+
 import {
   BrowserRouter as Router,
   Switch,
