@@ -1,4 +1,4 @@
-django==2.2.13
+django==2.2.20
 django-filer==1.6.0
 
 # Used to connect with our Postgres database.
