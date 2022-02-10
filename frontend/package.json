@@ -9,7 +9,7 @@
     "css-loader": "^1.0.1",
     "image-webpack-loader": "^6.0.0",
     "jest": "^24.9.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "react": "^16.12.0",
     "react-ace": "^8.0.0",
     "react-brace": "^3.6.6",
